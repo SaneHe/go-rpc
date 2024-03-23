@@ -9,7 +9,7 @@ func main() {
 	}
 
 	var reply string
-	err = conn.Call("HelloService.Hello", "hello", &reply)
+	err = conn.Call("HelloService.Hello", "sane", &reply)
 	if err != nil {
 		panic(err)
 	}
