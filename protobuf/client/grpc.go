@@ -11,7 +11,7 @@ import (
 
 func Call(n string) {
 
-	// 发起连接，WithInsecure表示使用不安全的连接，即不使用SSL
+	// 发起连接，grpc.WithTransportCredentials(insecure.NewCredentials()) 表示使用不安全的连接，即不使用SSL
 	conn, err := grpc.Dial("127.0.0.1:9901", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("connect failed: %v", err)
